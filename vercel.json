@@ -1,13 +1,18 @@
 {
   "version": 2,
-  "buildCommand": "cd apps/OpenSign && npm install && npm run build",
-  "outputDirectory": "apps/OpenSign/build",
-  "installCommand": "npm install",
-  "framework": "vite",
-  "rewrites": [
+  "builds": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "apps/OpenSign/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ],
   "env": {
