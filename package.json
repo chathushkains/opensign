@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install",
-    "lint-staged-changes": "lint-staged"
+    "lint-staged-changes": "lint-staged",
+    "deploy:vercel": "./deploy-vercel.sh",
+    "build:frontend": "cd apps/OpenSign && npm install && npm run build",
+    "dev:frontend": "cd apps/OpenSign && npm run dev",
+    "dev:backend": "cd apps/OpenSignServer && npm install && npm start"
   },
   "repository": {
     "type": "git",
